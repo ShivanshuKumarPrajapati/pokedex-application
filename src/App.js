@@ -42,13 +42,16 @@ function App() {
     fetchData(limit, offset);
   }, []);
 
+  const nextPokemon = () => {
+    fetchData(20, state.total);
+  }
   
     const poke =state.search.length > 0 ? state.search : state.pokemons; 
 
   return (
     <React.Fragment>
       <Layout>
-        <Grid pokemons={poke} />
+        <Grid pokemons={poke} nextPokemon={nextPokemon} />
         </Layout>
     </React.Fragment>
   );

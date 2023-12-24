@@ -354,6 +354,7 @@ body{
   outline: none;
   z-index: 11;
   font-size: 1.1em;
+  color: white;
 }
 
 .modal__close:hover{

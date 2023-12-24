@@ -1,12 +1,21 @@
-import React from 'react'
+import React,{useState} from 'react'
 import PokeballImage from "../assets/pokeball.png";
 import { searchIcon } from "../utils/icons";
+import Modal from './Modal';
 
-const Card = ({pokemon}) => {
+const Card = ({ pokemon }) => {
+    
+    const [showModal, setShowModal] = useState(false);
+
+    const handleModal = async() => {
+        await setShowModal(!showModal);
+        document.body.classList.toggle("dark");
+    }
     return (
 			<React.Fragment>
 				<div
 					className="card"
+					onClick={handleModal}
 					style={{
 						backgroundColor: `var(--bg-poke-color-light-${pokemon.types[0].type.name})`,
 					}}
@@ -40,6 +49,9 @@ const Card = ({pokemon}) => {
 						loading="lazy"
 					/>
 				</div>
+				{showModal && (
+					<Modal handleModal={handleModal} pokemon={pokemon} />
+				)}
 			</React.Fragment>
 		);
 }

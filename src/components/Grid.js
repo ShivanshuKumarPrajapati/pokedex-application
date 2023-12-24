@@ -1,12 +1,9 @@
 import React from 'react'
 import Card from './Card'
 
-const Grid = ({ pokemons }) => {
-    
-    const handleButton = () => {
-        console.log('button');
-    }
-    return (
+const Grid = ({ pokemons, nextPokemon }) => {
+	
+	return (
 		<div className="grid">
 			<div className="grid__pokemon">
 				{pokemons.map((poke) => (
@@ -15,17 +12,13 @@ const Grid = ({ pokemons }) => {
 			</div>
 			{pokemons.length >= 20 && (
 				<div className="grid__wrapper-button">
-					<button
-						className="grid__button"
-						type="button"
-						onClick={handleButton}
-					>
+					<button className="grid__button" type="button" onClick={nextPokemon}>
 						Show more
 					</button>
 				</div>
 			)}
 		</div>
 	);
-}
+};
 
 export default Grid
