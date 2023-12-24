@@ -1,0 +1,23 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0 50px;
+}
+
+.navbar{
+  padding: 20px 0;
+  margin-bottom: 30px;
+} 
+
+.navbar__title{
+  display: block;
+  text-align: center;
+  font-weight: 700;
+  font-size: 3em;
+  color:rgb(4, 89, 89);
+  font-family: 'Rubik Doodle Shadow';
+  text-shadow: 5px 5px 10px lightseagreen;
+}
+
+
